@@ -1,6 +1,12 @@
+const db = require('./config/db/database.sqlite');
+const app = require('./app');
 
-const app = require('./app/index')
-
-app.listen(3000, () => {
-  console.log('Init app: 3000 ');
-});
+db.config()
+  .then(() => {
+    app.listen(3000, () => {
+      console.log('App Start, PORT: 3000 ');
+    });
+  })
+  .catch((err) => {
+    console.log('DB Error: ', err)
+  });
