@@ -1,16 +1,16 @@
 {
-  "name": "repository-pattern-practice-one",
+  "name": "repository-pattern",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js"
+    "start": "nodemon ./src/server"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/alejss/repository-pattern.git"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -18,9 +18,9 @@
   },
   "homepage": "https://github.com/alejss/repository-pattern#readme",
   "dependencies": {
-    "express": "^4.18.2"
-  },
-  "devDependencies": {
-    "nodemon": "^3.0.1"
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^5.1.6"
   }
 }
