@@ -17,4 +17,32 @@ router.get('/:id', async (req, res) => {
   }
 });
 
+router.put('/', async (req, res) => {
+  try {
+    const userBody = req.body
+    const user = await userRepository.update(userBody);
+
+    res.status(200).json(user);
+  } catch (error) {
+    console.log('error: ', error);
+    res.status(404).json({
+      error: 'Error in service',
+    });
+  }
+});
+
+router.post('/', async (req, res) => {
+  try {
+    const userBody = req.body
+    const user = await userRepository.create(userBody);
+
+    res.status(200).json(user);
+  } catch (error) {
+    console.log('error: ', error);
+    res.status(404).json({
+      error: 'Error in service',
+    });
+  }
+});
+
 module.exports = router;
