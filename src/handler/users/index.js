@@ -9,7 +9,6 @@ router.get('/all', async (req, res) => {
 
     res.status(200).json(users);
   } catch (error) {
-    console.log('error: ', error);
     res.status(404).json({
       error: 'Error in service',
     });
@@ -23,7 +22,6 @@ router.get('/:id', async (req, res) => {
 
     res.status(200).json(user);
   } catch (error) {
-    console.log('error: ', error);
     res.status(404).json({
       error: 'Error in service',
     });
@@ -37,7 +35,6 @@ router.put('/', async (req, res) => {
 
     res.status(200).json(user);
   } catch (error) {
-    console.log('error: ', error);
     res.status(404).json({
       error: 'Error in service',
     });
@@ -48,11 +45,9 @@ router.post('/', async (req, res) => {
   try {
     const userBody = req.body
     const user = await userRepository.create(userBody);
-    console.log(user)
 
     res.status(200).json(user);
   } catch (error) {
-    console.log('error: ', error);
     res.status(404).json({
       error: 'Error in service',
     });

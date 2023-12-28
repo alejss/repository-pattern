@@ -1,3 +1,5 @@
+jest.mock('../../../../src/config/db/database.sqlite');
+
 const db = require('../../../../src/config/db/database.sqlite');
 const {
   all,
@@ -5,8 +7,6 @@ const {
   create,
   update,
 } = require('../../../../src/repositories/user/index');
-
-jest.mock('../../../../src/config/db/database.sqlite');
 
 describe('Repository User Test', () => {
   test('When all method response a success', async () => {

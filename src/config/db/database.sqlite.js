@@ -1,21 +1,14 @@
 const sqlite3 = require('sqlite3');
-const { open } = require('sqlite');
+const sqlite = require('sqlite');
 
 const pool = async () => {
   try {
-    const connection = await open({
+    const connection = await sqlite.open({
       filename: './data/database.db',
       driver: sqlite3.Database,
     });
-    return connection
-  } catch (error) {
-    return error
-  }
-};
 
-const config = async () => {
-  try {
-    return
+    return connection;
   } catch (error) {
     return error;
   }
@@ -23,5 +16,4 @@ const config = async () => {
 
 module.exports = {
   pool,
-  config,
 };
